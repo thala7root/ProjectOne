@@ -65,8 +65,7 @@ public class ConsultationController {
         return testRequestQueryService.findBy(RequestStatus.LAB_TEST_COMPLETED);
 
 
-        //throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED,"Not implemented");
-
+       
 
     }
 
@@ -81,13 +80,13 @@ public class ConsultationController {
         //Make use of the findByDoctor() method from testRequestQueryService class to get the list
         // For reference check the method getForTests() method from LabRequestController class
 
-        // replace this line of code with your implementation
+        /
 
         User doctor =userLoggedInService.getLoggedInUser();
         return  testRequestQueryService.findByDoctor(doctor);
 
 
-       // throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED,"Not implemented");
+      
 
 
 
@@ -110,10 +109,8 @@ public class ConsultationController {
 
 
         try {
-            // replace this line of code with your implementation
-            //throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED,"Not implemented");
+          
             User doctor =userLoggedInService.getLoggedInUser();
-
             return   testRequestUpdateService.assignForConsultation(id,doctor);
 
         }catch (AppException e) {
@@ -135,17 +132,13 @@ public class ConsultationController {
         //to update the current test request id with the testResult details by the current user(object created)
         // For reference check the method updateLabTest() method from LabRequestController class
 
+       
         try {
-            // replace this line of code with your implementation
-
             User doctor =userLoggedInService.getLoggedInUser();
-
             return   testRequestUpdateService.updateConsultation(id,testResult,doctor);
-
-           // throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED,"Not implemented");
-
-
-        } catch (ConstraintViolationException e) {
+        } 
+        
+        catch (ConstraintViolationException e) {
             throw asConstraintViolation(e);
         }catch (AppException e) {
             throw asBadRequest(e.getMessage());
