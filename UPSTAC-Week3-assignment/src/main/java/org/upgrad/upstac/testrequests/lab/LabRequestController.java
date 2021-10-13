@@ -77,7 +77,7 @@ public class LabRequestController {
 
 
 
-       //throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED,"Not implemented"); // replace this line with your code
+      
 
 
     }
