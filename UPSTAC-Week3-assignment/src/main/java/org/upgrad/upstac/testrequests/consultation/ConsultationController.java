@@ -80,7 +80,7 @@ public class ConsultationController {
         //Make use of the findByDoctor() method from testRequestQueryService class to get the list
         // For reference check the method getForTests() method from LabRequestController class
 
-        /
+        
 
         User doctor =userLoggedInService.getLoggedInUser();
         return  testRequestQueryService.findByDoctor(doctor);
